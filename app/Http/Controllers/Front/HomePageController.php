@@ -16,7 +16,7 @@ class HomePageController extends Controller
         
 
         $data = Post::where('status','publish')->where('id','!=',$lastData->id)->orderby('id','desc')->paginate(2);
-        return view('components.front.home-page',compact('data'));
+        return view('components.front.home-page',compact('data','lastData'));
     }
 
     private function lastData(){
